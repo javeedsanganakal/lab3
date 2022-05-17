@@ -5,11 +5,7 @@ import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import Axios from "axios";
 
-// Components
-// import CartItem from "../components/CartItem";
 
-// Actions
-// import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 import {
   clearCart,
   createCartItem,
