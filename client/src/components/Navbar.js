@@ -42,8 +42,6 @@ function Navbar() {
 
   let navLogin = null;
   if (user && cookie.load("user")) {
-    // console.log("Able to read cookie");
-    // console.log(cookie.load("user"));
     navLogin = (
       <ul className="icons">
         <li onClick={showFavourites}>
@@ -72,43 +70,7 @@ function Navbar() {
     );
   }
 
-  // let redirectVar = null;
-  // if (!cookie.load("user")) {
-  //   redirectVar = <Navigate to="/home" />;
-  // }
 
-  // const updateSearchTerm = (newSearchTerm) => {
-  //   setSearchTerm(newSearchTerm);
-  //   console.log(newSearchTerm + ".........................");
-
-  //   const variables = {
-  //     skip: Skip,
-  //     limit: limit,
-  //     searchTerm: searchTerm,
-  //   };
-  //   viewItems(variables);
-  // };
-
-  // const viewItems = (variables) => {
-  //   // setShowProds(true);
-  //   console.log("---------------in view Items-------------------");
-  //   Axios.post("http://localhost:4000/getAllProducts/1", variables).then(
-  //     (response) => {
-  //       if (response.data.success) {
-  //         if (variables.loadMore) {
-  //           setProducts([...products, ...response.data.result]);
-  //           console.log(products);
-  //         } else {
-  //           setProducts(response.data.result);
-  //         }
-  //         // setPostSize(response.data.postSize);
-  //         // console.log(response.data.postSize + "Postsize in getallProducts");
-  //       } else {
-  //         console.log("Failed in ");
-  //       }
-  //     }
-  //   );
-  // };
 
   return (
     <div>
