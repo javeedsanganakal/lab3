@@ -1,3 +1,2 @@
-# lab_2
-
+# lab_3
 ### Etsy application in MERN
