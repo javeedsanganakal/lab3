@@ -14,11 +14,7 @@ function searchBar(props) {
   const prod = useSelector(getProducts);
   const [searchTerms, setSearchTerms] = useState("");
   const [searchValue, setSearchValue] = useState("");
-  // const [products, setProducts] = useState([]);
-  // const searchInfo = (e) => {
-  //   e.preventDefault();
-  //   console.log("Search clicked");
-  // };
+
 
   const handleSearchResult = (e) => {
     e.preventDefault();
