@@ -45,7 +45,6 @@ function Purchases() {
   } else {
   }
 
-  //change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
