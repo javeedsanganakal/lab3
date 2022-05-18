@@ -12,6 +12,8 @@ import { Navigate } from "react-router-dom";
 import { useLazyQuery } from "@apollo/client";
 import { GETUSER_BY_ID } from "../GraphQL/Queries";
 
+// Profilr form
+
 function profileForm() {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
