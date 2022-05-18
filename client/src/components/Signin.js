@@ -13,7 +13,7 @@ import { backendURL } from "./config.json";
 import jwt_decode from "jwt-decode";
 
 function Signin({ setshowSignIn }) {
-  // const history = useHistory();
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
