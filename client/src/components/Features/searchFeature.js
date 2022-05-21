@@ -16,7 +16,7 @@ function searchFeature(props) {
         className="form-control"
         value={searchTerms}
         onChange={onChangeSearchEvent}
-        placeholder="Search by typing.."
+        placeholder="Search...."
       />
     </div>
   );
