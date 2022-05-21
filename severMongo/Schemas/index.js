@@ -62,13 +62,13 @@ const RootQuery = new GraphQLObjectType({
         let response = [];
         const data = await cartdb.find({ userId }).populate("itemId");
 
-        data.map((d) => {
-          const { _id, userId, itemId, qty } = d;
+        data.map((da) => {
+          const { _id, userId, itemId, qty } = da;
           response.push({
-            _id,
-            userId,
+            _id:_id,
+            userId:userId,
             itemId: JSON.stringify(itemId),
-            qty,
+            qty:qty,
           });
         });
 
