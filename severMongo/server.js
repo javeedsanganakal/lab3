@@ -12,7 +12,7 @@ const app = express();
 app.use(json());
 
 config({ path: "config.env" });
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT_NUMBER || 4002;
 app.use(morgan("short"));
 
 app.use(
@@ -23,7 +23,7 @@ app.use(
   })
 );
 
-//mongodb connection
+//mongodb database connection
 connectDB();
 
 //parse request to body-parser
@@ -40,4 +40,4 @@ app.use(
     graphiql: true,
   })
 );
-export default app.listen(PORT, () => console.log("Server Started"));
+export default app.listen(PORT, () => console.log(`server listening on ${PORT}`));
