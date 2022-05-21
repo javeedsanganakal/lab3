@@ -1,10 +1,7 @@
-// const passport = require("passport");
-// const { ExtractJwt } = require("passport-jwt");
-// const Users = require("./models/model");
-// const passport = require("passport");
+
 
 const JwtStrategy = require("passport-jwt").Strategy;
-var cookieExtractor = function (req) {
+var cookieExtractor =  (req)=> {
   const token = req.header("auth-token");
   return token;
 };
