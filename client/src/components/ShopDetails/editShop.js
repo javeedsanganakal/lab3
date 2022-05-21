@@ -9,9 +9,9 @@ function editShop({ editShopPage, userId }) {
   const [shopImage, setShopImage] = useState("");
   const [shopName, setShopName] = useState("");
 
-  const editShopDetails = (e) => {
-    e.preventDefault();
-    console.log("Update form image");
+  const editShopDetails = (event) => {
+    event.preventDefault();
+    console.log("Update form Image");
     const formData = new FormData();
     formData.append("shopImage", shopImage);
     Axios.put(
