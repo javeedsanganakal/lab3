@@ -5,15 +5,18 @@ const Items = require("./items");
 var schema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
+    required:true,
     ref: Userdb,
   },
   itemId: {
     type: mongoose.Schema.Types.ObjectId,
+    required:true,
     ref: Items,
   },
   qty: {
     type: Number,
-    default: null,
+    required:true,
+    default: null
   },
 });
 
