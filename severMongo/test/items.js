@@ -16,10 +16,10 @@ describe("Get Items", () => {
       chai
         .request(server)
         .get("/api/products/getItems")
-        .end((err, response) => {
-          response.should.have.status(200);
-          response.body.should.be.a("object");
-          response.body.length.should.be.eq(1);
+        .end((error, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a("object");
+          res.body.length.should.be.eq(1);
         });
       done();
     });
@@ -27,8 +27,8 @@ describe("Get Items", () => {
       chai
         .request(server)
         .get("/api/products/getIte")
-        .end((err, response) => {
-          response.should.have.status(404);
+        .end((error, res) => {
+          res.should.have.status(404);
         });
       done();
     });
@@ -40,10 +40,10 @@ describe("Get Items", () => {
       chai
         .request(server)
         .get("/api/products/getItemById/6253485f7745e7a3afaa4fc7")
-        .end((err, response) => {
-          response.should.have.status(200);
-          response.body.should.be.a("object");
-          response.body.length.should.be.eq(1);
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a("object");
+          res.body.length.should.be.eq(1);
         });
       done();
     });
@@ -51,9 +51,9 @@ describe("Get Items", () => {
       chai
         .request(server)
         .get("/api/products/getItemById/2")
-        .end((err, response) => {
-          response.should.have.status(200);
-          response.body.should.be.a("object");
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a("object");
         });
       done();
     });
@@ -69,8 +69,8 @@ describe("Get Items", () => {
         .request(server)
         .post("/api/products/addFavourite")
         .send(product)
-        .end((err, response) => {
-          response.should.have.status(200);
+        .end((err, res) => {
+          res.should.have.status(200);
         });
       done();
     });
@@ -84,8 +84,8 @@ describe("Get Items", () => {
         .request(server)
         .get("/api/users/findShopDuplicate")
         .send(shopName)
-        .end((err, response) => {
-          response.should.have.status(404);
+        .end((err, res) => {
+          res.should.have.status(404);
         });
       done();
     });
