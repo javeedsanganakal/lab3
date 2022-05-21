@@ -51,13 +51,13 @@ exports.addProduct = (req, res) => {
     const itemImage = req.file.location;
 
     const product = new items({
-      userId,
-      itemName,
-      itemCategory,
-      itemPrice,
-      itemDescription,
-      itemCount,
-      itemImage,
+      userId:userId,
+      itemName:itemName,
+      itemCategory:itemCategory,
+      itemPrice:itemPrice,
+      itemDescription:itemDescription,
+      itemCount:itemCount,
+      itemImage:itemImage,
     });
 
     await product
@@ -123,17 +123,17 @@ exports.getAllProducts = async (req, res) => {
 
 exports.getAllProductsById = async (req, res) => {
   const userId = req.params.id;
-  // console.log(userId + "get items by user id");
+ 
   await items
     .find({ userId: userId })
     .then((products) => {
-      // console.log(products);
+     
       res.send({ success: true, result: products });
     })
     .catch((err) => {
       res.send({
         success: false,
-        message: "Unable to fetch products by specific id",
+        message: "Unable to fetch products by id",
       });
     });
 };
@@ -144,7 +144,7 @@ exports.getItemsByItemSearchId = async (req, res) => {
   await items
     .find({ itemId: itemId })
     .then((products) => {
-      // console.log(products);
+      
       res.send({ success: true, result: products });
     })
     .catch((err) => {
@@ -167,7 +167,7 @@ exports.getItemById = async (req, res) => {
   await items
     .find({ _id: itemId })
     .then((product) => {
-      // console.log(product);
+     
       res.send({ result: product });
     })
     .catch((err) => {
@@ -187,17 +187,17 @@ exports.editItemById = (req, res) => {
   const itemCount = req.body.itemCount;
   items
     .findByIdAndUpdate(itemId, {
-      itemName,
-      itemDescription,
-      itemPrice,
-      itemCount,
+      itemName:itemName,
+      itemDescription:itemDescription,
+      itemPrice:itemPrice,
+      itemCount:itemCount,
     })
     .then((data) => {
       if (!data) {
         console.log(data + " can't update item details");
       } else {
         console.log(data);
-        console.log("item details updated successfully");
+        console.log("item details updated ");
         res.send({ success: true, data });
       }
     });
@@ -470,14 +470,7 @@ exports.getSalesCount = (req, res) => {
       res.send(err);
     });
 
-  // .then((data) => {
-  //   console.log(data);
-  //   res.send({ success: true, result: data });
-  // })
-  // .catch((err) => {
-  //   res.send(err);
-  // });
-  // write code to find sales count
+ 
 };
 
 exports.getSearchItems = (req, res) => {
