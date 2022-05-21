@@ -4,7 +4,6 @@ const product = require("../controller/Products");
 const passport = require("passport");
 require("../passport")(passport);
 let auth = passport.authenticate("jwt", { session: false });
-// const passportJwt = require("passport-jwt");
 
 //API
 productRoute.post("/api/products/addProduct/:id", product.addProduct);
@@ -34,7 +33,7 @@ productRoute.delete(
   product.deleteFavourite
 );
 
-//Cart
+
 
 //kafka
 productRoute.post("/api/products/addToCart/", product.addToCart);
