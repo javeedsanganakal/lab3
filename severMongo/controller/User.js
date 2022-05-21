@@ -21,7 +21,7 @@ sessionRouter.use(
     // duration: 60 * 60 * 1000, // Overall duration of Session : 30 minutes : 1800 seconds
     activeDuration: 5 * 60 * 1000,
     cookie: {
-      expiresIn: 60 * 60 * 24,
+      expiresIn: 60 * 30 * 24,
     },
   })
 );
@@ -54,16 +54,7 @@ exports.create = async (req, res) => {
   const savedUser = await user.save();
   if (savedUser) return res.send({ success: true, data: savedUser });
   else return res.status(500).send({ success: false });
-  // save user in the db
-  // user
-  //   .save()
-  //   .then((data) => {
-  //     res.send(data);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(500).send({ message: "some error occured" });
-  //   });
+  
 };
 
 exports.findUser = (req, res) => {
@@ -92,11 +83,11 @@ exports.findUser = (req, res) => {
           session.user = user;
           const payload = { _id: user._id, username: user.username };
           let token = jwt.sign(payload, process.env.SECRET, {
-            expiresIn: "1h",
+            expiresIn: "2h",
           });
 
           res.cookie("token", token, {
-            maxAge: 900000,
+            maxAge: 90000,
             httpOnly: false,
             path: "/",
           });
@@ -187,7 +178,7 @@ exports.updateUser = (req, res) => {
   uploadSingle(req, res, async (err) => {
     if (err) return res.status(400).json({ message: err.message });
     console.log(req.file);
-    // console.log(req.file.location);
+    
     console.log("-----------------------------------");
     console.log(req.body);
 
@@ -227,7 +218,7 @@ exports.updateUser = (req, res) => {
           "--------------------------------not updated results -------------" +
             err
         );
-        res.send({ message: "User not updated", err });
+        res.send({ message: "User not updated!!!", err });
       });
   });
 };
