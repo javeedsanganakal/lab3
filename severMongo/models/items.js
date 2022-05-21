@@ -8,37 +8,37 @@ var schema = new mongoose.Schema({
   },
   itemName: {
     type: String,
-    required:true,
+    require:true,
     default: null,
   },
   itemCategory: {
     type: String,
-    required:true,
+    require:true,
     default: null,
   },
   itemPrice: {
     type: Number,
-     required:true,
+     require:true,
     default: null,
   },
   itemDescription: {
     type: String,
-    required:true,
+    require:true,
     default: null,
   },
   itemCount: {
     type: Number,
-    required:true,
+    require:true,
     default: null,
   },
   itemImage: {
     type: String,
-    required:true,
+    require:true,
     default: null,
   },
   sales: {
     type: Number,
-    required:true,
+    require:true,
     default: 0,
   },
 });
