@@ -18,7 +18,6 @@ function editProducts({ setShowProductsEditPage, itemId }) {
     itemName: itemName,
     itemPrice: itemPrice,
     itemDescription: itemDescription,
-    // itemCategory: itemCategory,
     itemCount: itemCount,
   };
 
@@ -32,7 +31,7 @@ function editProducts({ setShowProductsEditPage, itemId }) {
     ).then((response) => {
       if (response) {
         console.log("In update items--------------------------------------");
-        console.log("Item details edited successfully.....");
+        console.log("Item details edited.....");
       }
     });
   };
@@ -74,7 +73,7 @@ function editProducts({ setShowProductsEditPage, itemId }) {
               type="text"
               className="item_name"
               id="item_name"
-              //   placeholder="Item Name"
+             
               defaultValue={itemName}
               onChange={(event) => {
                 setItemName(event.target.value);
@@ -83,29 +82,6 @@ function editProducts({ setShowProductsEditPage, itemId }) {
             />
           </div>
 
-          {/* <div className="htmlForm-group">
-            <label htmlFor="category">Category</label>
-            <br />
-            <select
-              defaultValue={itemCategory}
-              onChange={(event) => {
-                setItemCategory(event.target.value);
-              }}
-              style={{
-                width: "90%",
-                height: "40px",
-                border: "1px solid black",
-                borderRadius: "4px",
-              }}
-            >
-              <option value=""></option>
-              <option value="jewellery">Jewellery</option>
-              <option value="clothing">Clothing</option>
-              <option value="entertainment">Entertainment</option>
-              <option value="homeDecor">Home Decor</option>
-              <option value="others">Others</option>
-            </select>
-          </div> */}
 
           <div className="htmlForm-group">
             <label htmlFor="item_price">
@@ -175,18 +151,6 @@ function editProducts({ setShowProductsEditPage, itemId }) {
             </button>
           </div>
         </form>
-        {/* ) : (
-        <div
-          style={{
-            display: "flex",
-            height: "300px",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <h2>No items</h2>
-        </div>
-        )} */}
       </div>
     </div>
   );
