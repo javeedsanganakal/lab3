@@ -14,30 +14,37 @@ var schema = new mongoose.Schema(
     },
     itemName: {
       type: String,
+      require:true,
       default: null,
     },
     itemImage: {
       type: String,
+      require:true,
       default: null,
     },
     itemCount: {
       type: Number,
+      require:true,
       default: null,
     },
     itemPrice: {
       type: Number,
+      require:true,
       default: null,
     },
     qty: {
       type: Number,
+      require:true,
       default: null,
     },
     itemDescription: {
       type: String,
+      require:true,
       default: null,
     },
     giftMessage: {
       type: String,
+      require:true,
       default: null,
     },
   },
